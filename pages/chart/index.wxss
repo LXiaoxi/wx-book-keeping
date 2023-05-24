@@ -1,0 +1,108 @@
+/* pages/chart/index.wxss */
+.menu {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+    z-index: 9999;
+}
+
+.menu .menu-left {
+    width: 40%;
+}
+
+.menu .menu-right {
+    width: 60%;
+}
+
+.content {
+    padding-top: 100rpx;
+}
+
+.content .date {
+    display: flex;
+    overflow-y: scroll;
+    direction: rtl;
+    color: #999999;
+    border-bottom: 1rpx solid #cccccc;
+}
+
+.content .date .item {
+    padding: 20rpx;
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 120rpx;
+}
+
+.content .date .active {
+    border-bottom: 1rpx solid #333333;
+    color: #000000;
+}
+
+.content .data {
+    padding: 30rpx;
+    padding-bottom: 0;
+    font-size: 26rpx;
+    color: #696969;
+}
+
+.content .data .data-item {
+    margin-bottom: 20rpx;
+}
+
+.content .data .data-gross {
+    font-size: 30rpx;
+}
+
+.echarts {
+    width: 100vw;
+    height: 400rpx;
+}
+
+.ranking {
+    padding: 20rpx;
+}
+
+.ranking .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ranking .info .item {
+    display: flex;
+    margin: 20rpx 0;
+}
+
+.iconfont {
+    font-size: 42rpx;
+}
+
+.ranking .info .item .icon {
+    border: 1px solid #999;
+    padding: 20rpx;
+    border-radius: 50%;
+
+}
+
+.ranking .info .item .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 20rpx;
+    color: #333333;
+    font-size: 28rpx;
+}
+
+.ranking .info .item .right .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ranking .info .item .right .proportion {
+    height: 10rpx;
+    border-radius: 10rpx;
+    margin: 5rpx 0;
+    background-color: #ffda44;
+}

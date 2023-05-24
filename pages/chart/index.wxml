@@ -1,0 +1,42 @@
+<!--pages/chart/index.wxml-->
+<view class="menu">
+    <menu class="menu-left" menu="{{ menu }}" bind:menuItemClick="handleMenuItem"></menu>
+    <menu class="menu-right" menu="{{ menuDate }}" bind:menuItemClick="handleMenuDateItem"></menu>
+</view>
+<view class="content">
+    <view class="date">
+        <block wx:if="{{ menuDateIndex === 0}}">
+            <view wx:for="{{ weeks }}" wx:key="*this" class="item {{ dateIndex == index ? 'active': ''}}" bindtap="handleDateItem" data-index="{{ index }}">第{{ item }}周</view>
+        </block>
+        <block wx:if="{{ menuDateIndex === 1}}">
+            <view wx:for="{{ months }}" wx:key="*this" class="item {{ dateIndex == index ? 'active': ''}}" bindtap="handleDateItem" data-index="{{ index }}">{{ item }}月</view>
+        </block>
+        <block wx:if="{{ menuDateIndex === 2}}">
+            <view wx:for="{{ years }}" wx:key="*this" class="item {{ dateIndex == index ? 'active': ''}}" bindtap="handleDateItem" data-index="{{ index }}">{{ item }}年</view>
+        </block>
+    </view>
+    <view class="data">
+        <view class="data-item data-gross">{{ menuIndex == 0? '总支出' : '总收入'}}: {{ total }}</view>
+        <view class="data-item data-average">平均值: {{ 0 }}</view>
+    </view>
+    <view class="echarts">
+        <ec-canvas id="echarts" force-use-old-canvas="false" canvas-id="echarts" ec="{{ec}}"></ec-canvas>
+    </view>
+    <view class="ranking">
+        <view class="title">{{ menuIndex == 0? '支出':'收入'}}排行榜</view>
+        <view class="info">
+            <block wx:for="{{ rankingData }}">
+                <view class="item">
+                    <view class="icon iconfont {{item.icon}}"></view>
+                    <view class="right">
+                        <view class="top">
+                            <view class="name">{{item.name}} {{item.proportion}}%</view>
+                            <view class="amount">{{item.amount}}</view>
+                        </view>
+                        <view class="proportion" style="width:{{item.proportion+'%'}}"></view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

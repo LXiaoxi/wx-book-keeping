@@ -1,0 +1,42 @@
+<!--pages/book-detail/index.wxml-->
+<scroll-view scroll-y style="width: 100%; height: 100vh;" bindscrolltolower="handleScroll">
+    <view class="top">
+        <view class="left">
+            <view class="item date">
+                <view class="title">{{ year }}年</view>
+                <picker mode="date" header-text="选择时间" fields="month" value="{{date}}" bindchange="handleChangeDate">
+                    <view class="font30">
+                        <text class="color6">{{month}}月</text>
+                        <text class="timeIcon">▼</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="right">
+            <view class="item income">
+                <view class="title">收入</view>
+                <view class="bottom">{{ incomeTotal }}</view>
+            </view>
+            <view class="item expend">
+                <view class="title">支出</view>
+                <view class="bottom">{{ expendTotal}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <block wx:for="{{ dateArr }}" wx:for-item="i" wx:key="i.month">
+            <view class="date">{{ i.date }}</view>
+            <block wx:for="{{ i.list }}">
+                <view class="item" bindtap="handleItemClick" data-id="{{item.id}}">
+                    <view class="left">
+                        <view class="icon iconfont {{ item.icon }}"></view>
+                    </view>
+                    <view class="right">
+                        <view class="name">{{ item.name }}</view>
+                        <view>{{ item.amount }}</view>
+                    </view>
+                </view>
+            </block>
+        </block>
+    </view>
+</scroll-view>

@@ -1,0 +1,91 @@
+/* components/keyboard/index.wxss */
+.keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100vw;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.keyboard .top {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 0 40rpx;
+}
+
+
+.keyboard .top .input {
+    flex: 1;
+    min-width: 30%;
+    margin: 0 20rpx;
+}
+
+
+.keyboard .bottom {
+    display: flex;
+    justify-content: center;
+
+}
+
+.keyboard .bottom .left {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
+    margin-right: -10rpx;
+
+}
+
+
+.keyboard .bottom .left .item {
+    width: 32.5%;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-top: 1rpx solid #d9d9d9;
+    border-left: 1rpx solid #d9d9d9;
+}
+
+.keyboard .bottom .left .item:nth-child(3n+1) {
+    border-left: none;
+}
+
+.keyboard .bottom .right {
+    flex: 1;
+}
+
+.keyboard .bottom .right .item {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-top: 1rpx solid #d9d9d9;
+    border-left: 1rpx solid #d9d9d9;
+}
+
+.keyboard .bottom .right .symbol {
+    display: flex;
+    flex-wrap: wrap;
+    height: 160rpx;
+}
+
+.keyboard .bottom .right .symbol view {
+    width: 48.5%;
+}
+
+.keyboard .bottom .right .symbol view:nth-child(2n) {
+    border-left: 1rpx solid #d9d9d9;
+
+}
+
+.keyboard .bottom .right .symbol view:nth-child(n+3) {
+    border-top: 1rpx solid #d9d9d9;
+}
+
+.keyboard .bottom .right .operation {
+    background-color: #ffdc2e;
+}

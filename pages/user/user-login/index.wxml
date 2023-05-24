@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="logo"></view>
+    <view class="wx-login-btn" bindtap="handleLogin">微信登录</view>
+</view>
+
+<view class="mask" wx:if="{{isShowGetPhoneNumberModal}}"></view>
+<view wx:if="{{isShowGetPhoneNumberModal}}" class="modalDlg">
+    <view class="search-container">
+        <view class="tip-content" style="text-align: center;">是否允许获取手机号</view>
+        <button class="authorization-btn" open-type="getPhoneNumber" bindgetphonenumber="handleGetPhoneNumber">授权</button>
+        <view class="cancel-btn" bindtap="handleCancel">取消</view>
+    </view>
+</view>

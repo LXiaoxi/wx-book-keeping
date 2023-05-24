@@ -1,0 +1,74 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 500rpx;
+    height: 500rpx;
+    background-color: #e8e8e8;
+    margin: 90rpx;
+}
+
+.wx-login-btn {
+    width: 520rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+    text-align: center;
+    background-color: #20a775;
+    color: #fff;
+    font-size: 28rpx;
+    border-radius: 52rpx;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #f0f2f5;
+    z-index: 9000;
+    opacity: 1;
+
+}
+
+.modalDlg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.search-container {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 632rpx;
+    height: 340rpx;
+    margin: -170rpx -316rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    color: #101010 100%;
+    padding: 52rpx 0;
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+
+.authorization-btn {
+    width: 400rpx;
+    background-color: #1EA875;
+    color: #fff;
+    border-radius: 40rpx;
+    margin: 50rpx 0 40rpx;
+}
+
+.cancel-btn {
+    text-align: center;
+    color: #BBBBBB;
+}

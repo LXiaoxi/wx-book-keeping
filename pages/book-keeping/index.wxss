@@ -1,0 +1,37 @@
+/* pages/book-keeping/index.wxss */
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.expend-category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 100rpx;
+}
+
+.expend-category-list text {
+    width: 120rpx;
+}
+
+.expend-category-list .item {
+    margin: 20rpx 30rpx;
+    text-align: center;
+}
+
+.expend-category-list .item .icon {
+    width: 120rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+
+}
+
+.expend-category-list .item .icon-active {
+    background-color: #ffdc2e;
+}

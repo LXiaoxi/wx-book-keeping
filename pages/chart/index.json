@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "menu": "/components/menu/index",
+        "ec-canvas": "../../ec-canvas/ec-canvas"
+
+    },
+    "navigationBarTitleText": "图表"
+}

@@ -1,0 +1,33 @@
+<!--pages/book-detail/detail-item/index.wxml-->
+<view class="top">
+    <view class="icon iconfont {{item.icon}}"></view>
+    <view class="name">{{item.name}}</view>
+</view>
+<view class="content">
+    <view class="item">
+        <view class="label">类型</view>
+        <view class="name">{{ item.isExpend ? '支出' : '收入'}}</view>
+    </view>
+    <view class="item">
+        <view class="label">金额</view>
+        <view class="name">
+            {{item.amount}}
+        </view>
+    </view>
+    <view class="item">
+        <view class="label">日期</view>
+        <view class="name">
+            {{item.date}}
+        </view>
+    </view>
+    <view class="item">
+        <view class="label">备注</view>
+        <view class="name" wx:if="{{ item.remark}}">
+            {{item.remark}}
+        </view>
+    </view>
+</view>
+<view class="bottom">
+    <view class="item edit" bindtap="handleEdit">编辑</view>
+    <view class="item detele" bindtap="handleDelete">删除</view>
+</view>

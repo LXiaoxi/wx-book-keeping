@@ -1,0 +1,91 @@
+/* pages/book-detail/index.wxss */
+.iconfont {
+    font-size: 50rpx;
+    color: #ffda44;
+}
+
+.top {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120rpx;
+    background-color: #fddc2d;
+}
+
+.top .left,
+.top .right {
+    margin-top: 10rpx;
+}
+
+.top .title {
+    font-size: 26rpx;
+    color: #757575;
+}
+
+.top .bottom {
+    height: 60rpx;
+    line-height: 80rpx;
+
+}
+
+.top .left {
+    width: 120rpx;
+    margin-left: 20rpx;
+
+}
+
+.top .left .item .month {
+    border-right: 1rpx solid #4d4c4a;
+}
+
+.top .right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.top .right .item {
+    width: 40%;
+    margin-left: 40rpx;
+}
+
+.content {
+    padding-top: 130rpx;
+    padding: 130rpx 20rpx 0;
+}
+
+.content .item .left,
+.content .item .right {
+    padding: 20rpx 0;
+}
+
+.content .item,
+.content .item .right {
+    display: flex;
+    font-size: 28rpx;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .item .left .icon {
+    width: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.content .item .right {
+    flex: 1;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.content .date {
+    color: #bbbbbb;
+    font-size: 24rpx;
+}

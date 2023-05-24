@@ -1,0 +1,8 @@
+<!--components/menu/index.wxml-->
+<view class="menu">
+    <view class="menu-item ">
+        <block wx:for="{{ menu }}" wx:key="item">
+            <view class="item {{ index == menuIndex ?  'active' : ''}}" bindtap="handleMenuItem" data-index="{{ index }}">{{ item }}</view>
+        </block>
+    </view>
+</view>

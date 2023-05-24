@@ -1,0 +1,36 @@
+/* components/menu/index.wxss */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffdc2e;
+    height: 100rpx;
+}
+
+.menu .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    line-height: 50rpx;
+    border: 1rpx solid #000;
+    border-radius: 15rpx;
+    font-size: 24rpx;
+}
+
+.menu .item {
+    width: 50%;
+    height: 50rpx;
+    text-align: center;
+    border-right: 1rpx solid #000;
+}
+
+.menu .item:last-child {
+    border-right: none;
+}
+
+
+.menu .active {
+    background-color: #343233;
+    color: #ffdc2e;
+}

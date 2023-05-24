@@ -1,0 +1,47 @@
+{
+    "pages": [
+        "pages/book-detail/index",
+        "pages/book-keeping/index",
+        "pages/user/index",
+        "pages/user/user-login/index",
+        "pages/chart/index",
+        "pages/book-detail/detail-item/index"
+    ],
+    "tabBar": {
+        "selectedColor": "#333",
+        "list": [
+            {
+                "text": "明细",
+                "pagePath": "pages/book-detail/index",
+                "iconPath": "/asset/tabbar/detail.png",
+                "selectedIconPath": "/asset/tabbar/active_detail.png"
+            },
+            {
+                "text": "记账",
+                "pagePath": "pages/book-keeping/index",
+                "iconPath": "/asset/tabbar/keeping.png",
+                "selectedIconPath": "/asset/tabbar/active_keeping.png"
+            },
+            {
+                "text": "图表",
+                "pagePath": "pages/chart/index",
+                "iconPath": "/asset/tabbar/chart.png",
+                "selectedIconPath": "/asset/tabbar/active_chart.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/user/index",
+                "iconPath": "/asset/tabbar/profile.png",
+                "selectedIconPath": "/asset/tabbar/active_profile.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffdc2e",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

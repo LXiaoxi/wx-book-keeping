@@ -1,0 +1,19 @@
+<!--pages/user/index.wxml-->
+<view class="mine">
+    <view class="top">
+        <view class="avatar">
+            <image class="img" src="{{ userInfo.avatar }}"></image>
+        </view>
+        <view class="name">{{ userInfo.nickname}}</view>
+        <view class="info">
+            <view class="item">
+                <view class="number">{{ totalDay }}</view>
+                <view class="name">总记账天数</view>
+            </view>
+            <view class="item">
+                <view class="number">{{ totalCount }}</view>
+                <view class="name">总记账笔数</view>
+            </view>
+        </view>
+    </view>
+</view>

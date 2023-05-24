@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "keyboard": "/components/keyboard/index",
+        "menu":"/components/menu/index"
+    },
+    "navigationBarTitleText": "记账"
+}
