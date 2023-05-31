@@ -15,9 +15,11 @@ Page({
     data: {
         menu: ["支出", "收入"],
         categoryList: [],
-        currentIndex: null,
+        currentIndex: -1,
         menuIndex: 0,
-        item: null,
+        item: {
+            amount: "0"
+        },
         editItem: null
     },
 
@@ -107,9 +109,26 @@ Page({
         if (currentIndex === this.data.currentIndex) {
             currentIndex = null
         }
+
+        let item = null
+        if (this.data.editItem != null) {
+            item = this.data.editItem
+        } else {
+            item = {
+                amount: "0"
+            }
+        }
+        item.name = categoryList[currentIndex].name
+        item.icon = categoryList[currentIndex].icon
         this.setData({
             currentIndex,
-            item: categoryList[currentIndex]
+            item: item
+        })
+    },
+    handelRefresh(e) {
+        this.setData({
+            editItem: null,
+            currentIndex: -1
         })
     },
 

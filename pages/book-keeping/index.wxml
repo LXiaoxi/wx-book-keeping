@@ -14,4 +14,4 @@
     <text></text>
     <text></text>
 </view>
-<keyboard isExpend="{{ menuIndex===0 ? true : false}}" wx:if="{{ currentIndex != null}}" currentIndex="{{ currentIndex }}" item="{{ item }}"></keyboard>
+<keyboard isExpend="{{ menuIndex===0 ? true : false}}" wx:if="{{ currentIndex >=0}}" currentIndex="{{ currentIndex }}" item="{{ item }}" bind:refresh="handelRefresh"></keyboard>

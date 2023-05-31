@@ -1,6 +1,7 @@
 // components/keyboard/index.js
 import {
-    createAmountDetailRequest
+    createAmountDetailRequest,
+    updateAmountDetailRequest
 } from '../../service/api-amount'
 import {
     calcExpression
@@ -36,13 +37,10 @@ Component({
      * 组件的初始数据
      */
     data: {
-        expression: "0",
         operation: "完成",
         keyboard: [1, 2, 3, 4, 5, 6, 7, 8, 9, '.', '0', 'X'],
         date: null,
-        remark: "",
         isRefresh: false,
-
     },
 
     /**
@@ -64,10 +62,11 @@ Component({
     methods: {
         handleKeyBoardItem(e) {
             const item = e.currentTarget.dataset.item
-            if (this.data.expression === '0') {
-                this.data.expression = ''
+            if (this.data.item.amount === '0') {
+                this.data.item.amount = ''
             }
-            let newExpression = this.data.expression.concat(item)
+
+            let newExpression = this.data.item.amount.toString().concat(item)
             let operation = '完成'
             // 删除最后一个元素
             if (item === 'X') {
@@ -88,7 +87,7 @@ Component({
             }
 
             this.setData({
-                expression: newExpression,
+                'item.amount': newExpression,
                 operation
             })
         },
@@ -103,11 +102,11 @@ Component({
             if (isMultiply != undefined) {
                 symbol = isMultiply ? '*' : '/'
             }
-            if (this.data.expression === '0') {
-                this.data.expression = ''
+            if (this.data.item.amount === '0') {
+                this.data.item.amount = ''
             }
             this.setData({
-                expression: this.data.expression.concat(symbol)
+                'item.amount': this.data.item.amount.concat(symbol)
             })
         },
         handleDateChange(e) {
@@ -118,21 +117,21 @@ Component({
         handleRemark(e) {
             const remark = e.detail.value
             this.setData({
-                remark
+                'item.remark': remark
             })
         },
         // 计算结果/创建
-        handleOperation() {
+        async handleOperation() {
             if (this.data.operation === '=') {
                 // 计算
-                const amount = calcExpression(this.data.expression)
+                const amount = calcExpression(this.data.item.amount)
                 this.setData({
-                    expression: amount.toFixed(3) + "",
+                    'item.amount': amount.toFixed(3) + "",
                     operation: "完成"
                 })
 
             } else {
-                if (this.data.expression == '0') {
+                if (this.data.item.amount == '0') {
                     showMessage("请输入金额")
                     return
                 }
@@ -150,25 +149,30 @@ Component({
                 const createDetailDto = {
                     icon: item.icon,
                     name: item.name,
-                    amount: Number(this.data.expression.replace(/[^\d.]/g, "")).toFixed(2),
-                    remark: this.data.remark,
+                    amount: Number(this.data.item.amount.toString().replace(/[^\d.]/g, "")).toFixed(2),
+                    remark: item.remark,
                     isExpend: this.data.isExpend,
                     date,
                 }
-                if (this.data.isCreate) {
-                    createAmountDetailRequest(createDetailDto).then(res => {
-                        if (res.code === 200) {
-                            showMessage("成功")
-                            this.setData({
-                                currentIndex: null,
-                                expression: "0",
-                                remark: "",
-                                isRefresh: true
-                            })
-                        }
-                    })
+                if (!this.data.item.id) {
+                    const res = await createAmountDetailRequest(createDetailDto)
+                    if (res.code == 200) {
+                        showMessage("添加成功")
+                        this.setData({
+                            isRefresh: true
+                        })
+                    }
                 } else {
-                    console.log("编辑");
+                    const item = {
+                        ...this.data.item
+                    }
+                    const amountId = item.id
+                    delete item.id
+                    const res = await updateAmountDetailRequest(amountId, item)
+                    if (res.code == 200) {
+                        showMessage("修改成功")
+                        this.triggerEvent("refresh")
+                    }
                 }
             }
         }

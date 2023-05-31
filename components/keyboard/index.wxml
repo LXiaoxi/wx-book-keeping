@@ -3,9 +3,9 @@
     <view class="top">
         <view class="remark">备注:</view>
         <view class="input">
-            <input type="text" cursor-spacing="10" value="{{ remark ? remark: item.remark }}" bindblur="handleRemark" />
+            <input type="text" cursor-spacing="10" value="{{ item.remark }}" bindblur="handleRemark" />
         </view>
-        <view class="expression">{{ expression }}</view>
+        <view class="expression">{{ item.amount }}</view>
     </view>
     <view class="bottom">
         <view class="left">

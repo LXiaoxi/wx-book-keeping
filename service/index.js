@@ -52,10 +52,10 @@ class XxRequest {
         return this.request(url, 'post', data)
     }
     delete(url, data) {
-        return this.request(url, 'post', data)
+        return this.request(url, 'delete', data)
     }
     put(url, data) {
-        return this.request(url, 'post', data)
+        return this.request(url, 'put', data)
     }
 }
 

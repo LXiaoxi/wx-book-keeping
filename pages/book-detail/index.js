@@ -53,7 +53,14 @@ Page({
         }
 
     },
-    getPageData() {
+    getPageData(isRefresh = false) {
+        if (isRefresh) {
+            this.setData({
+                amountDetailList: [],
+                dateArr: [],
+                'getAmountDetailCondition.page': 0
+            })
+        }
         getAmountDetailListRequest(this.data.getAmountDetailCondition).then(res => {
             if (res.code === 200) {
                 const newData = res.data.map(item => {
@@ -116,7 +123,7 @@ Page({
     handleItemClick(e) {
         const id = e.currentTarget.dataset.id
         wx.navigateTo({
-          url: `./detail-item/index?id=${id}`,
+            url: `./detail-item/index?id=${id}`,
         })
     }
 

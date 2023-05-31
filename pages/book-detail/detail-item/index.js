@@ -1,7 +1,11 @@
 // pages/book-detail/detail-item/index.js
 import {
-    getAmountDetailRequest
+    getAmountDetailRequest,
+    deleteAmountDetailRequest
 } from '../../../service/api-amount'
+import {
+    showMessage
+} from '../../../utils/util'
 Page({
 
     /**
@@ -41,6 +45,23 @@ Page({
         })
     },
     handleDelete() {
-
+        wx.showModal({
+            content: '确定删除?',
+            success: res => {
+                if (res.confirm) {
+                    deleteAmountDetailRequest(this.data.id).then(res => {
+                        if (res.code == 200) {
+                            showMessage("删除成功")
+                            const pages = getCurrentPages()
+                            const prePage = pages[pages.length - 2]
+                            prePage.getPageData(true)
+                            wx.navigateBack({
+                                delta: 1
+                            })
+                        }
+                    })
+                }
+            }
+        })
     }
 })

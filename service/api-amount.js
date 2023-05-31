@@ -9,6 +9,14 @@ export function getAmountDetailListRequest(data) {
 export function createAmountDetailRequest(data) {
     return xxRequest.post(`/amount/detail/add`, data)
 }
+// 编辑金额明细
+export function updateAmountDetailRequest(amountId, data) {
+    return xxRequest.put(`/amount/detail/update/${amountId}`, data)
+}
+// 删除金额明细
+export function deleteAmountDetailRequest(amountId) {
+    return xxRequest.delete(`/amount/detail/delete/${amountId}`)
+}
 
 // 获取单个金额明细
 export function getAmountDetailRequest(data) {
