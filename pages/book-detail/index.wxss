@@ -89,3 +89,16 @@
     color: #bbbbbb;
     font-size: 24rpx;
 }
+
+.empty {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 50rpx;
+    color: #bbbbbb;
+    font-size: 28rpx;
+    text-align: center;
+}

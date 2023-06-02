@@ -107,9 +107,12 @@ Page({
             return
         }
         if (currentIndex === this.data.currentIndex) {
-            currentIndex = null
+            // currentIndex = -1
+            this.setData({
+                currentIndex: -1
+            })
+            return
         }
-
         let item = null
         if (this.data.editItem != null) {
             item = this.data.editItem

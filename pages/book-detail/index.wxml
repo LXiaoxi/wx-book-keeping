@@ -23,6 +23,8 @@
             </view>
         </view>
     </view>
+    <view wx:if="{{ dateArr.length <= 0}}" class="empty">暂时没有数据，快去记一笔吧!</view>
+
     <view class="content">
         <block wx:for="{{ dateArr }}" wx:for-item="i" wx:key="i.month">
             <view class="date">{{ i.date }}</view>
@@ -32,7 +34,7 @@
                         <view class="icon iconfont {{ item.icon }}"></view>
                     </view>
                     <view class="right">
-                        <view class="name">{{ item.name }}</view>
+                        <view class="name">{{ item.remark ? item.remark : item.name }}</view>
                         <view>{{ item.amount }}</view>
                     </view>
                 </view>

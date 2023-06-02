@@ -2,7 +2,7 @@
 <view class="menu">
     <menu menu="{{ menu }}" menuIndex="{{ menuIndex }}" bind:menuItemClick="handleMenuItem"></menu>
 </view>
-<view class="expend-category-list" style="padding-bottom:{{currentIndex != null ? '400rpx':'0rpx'}}">
+<view class="expend-category-list" style="padding-bottom:{{currentIndex != -1 ? '400rpx':'0rpx'}}">
     <block wx:for="{{ categoryList[menuIndex] }}" wx:key="id">
         <view class="item" data-index="{{ index }}" bindtap="handleItemClick">
             <view class="icon iconfont {{item.icon}} {{ index == currentIndex ? 'icon-active' : ''}}"></view>
