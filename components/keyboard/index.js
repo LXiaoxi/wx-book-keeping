@@ -39,7 +39,6 @@ Component({
     data: {
         operation: "完成",
         keyboard: [1, 2, 3, 4, 5, 6, 7, 8, 9, '.', '0', 'X'],
-        date: null,
         isRefresh: false,
     },
 
@@ -111,7 +110,7 @@ Component({
         },
         handleDateChange(e) {
             this.setData({
-                date: e.detail.value
+                'item.date': e.detail.value
             })
         },
         handleRemark(e) {
@@ -138,8 +137,8 @@ Component({
                 // 发送请求
                 const item = this.data.item
                 // 获取当前时间
-                let date = this.data.date
-                if (this.data.date === null) {
+                let date = this.data.item.date
+                if (this.data.item.date === null) {
                     const time = new Date()
                     const year = time.getFullYear()
                     const month = (time.getMonth() + 1).toString().padStart(2, "0")

@@ -109,7 +109,9 @@ Page({
         if (currentIndex === this.data.currentIndex) {
             // currentIndex = -1
             this.setData({
-                currentIndex: -1
+                currentIndex: -1,
+                item: null,
+                editItem: null
             })
             return
         }

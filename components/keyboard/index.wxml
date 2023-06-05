@@ -15,8 +15,8 @@
         </view>
         <view class="right">
             <view class="item" bindtap="handleDate">
-                <picker mode="date" bindchange="handleDateChange" value="{{ date }}">
-                    <text>{{ date == null ? "今天" : date}}</text>
+                <picker mode="date" bindchange="handleDateChange" value="{{ item.date }}">
+                    <text>{{item.date == null ? "今天" : item.date}}</text>
                 </picker>
             </view>
             <view class="item symbol">
