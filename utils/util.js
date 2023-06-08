@@ -39,8 +39,8 @@ const showMessage = (message, isBack = false, duration = 1500, icon = "none", ma
     })
 }
 // 获取周
-function getWeek(year) {
-    let days = getDate(year || new Date().getFullYear())
+function getWeek() {
+    let days = getDate(new Date().getFullYear())
     let weeks = {};
     for (let i = 0; i < days.length; i++) {
         let weeksKeyLen = Object.keys(weeks).length;
@@ -63,7 +63,8 @@ function getDate(year) {
     let dates = [];
     for (let i = 1; i <= 12; i++) {
         for (let j = 1; j <= new Date(year, i, 0).getDate(); j++) {
-            dates.push(year + '-' + formatNumber(i) + '-' + formatNumber(j) + '_' + new Date([year, i, j].join('-')).getDay())
+            let str = [year, formatNumber(i), formatNumber(j)].join('-').toString()
+            dates.push(year + '-' + formatNumber(i) + '-' + formatNumber(j) + '_' + new Date(str).getDay())
         }
     }
     return dates;

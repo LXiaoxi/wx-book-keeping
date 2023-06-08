@@ -1,4 +1,9 @@
-const BASE_URL = 'http://127.0.0.1:7001'
+import {
+    showMessage
+} from "../utils/util"
+
+// const BASE_URL = 'http://127.0.0.1:7001'
+const BASE_URL = 'http://192.168.1.214:7001'
 class XxRequest {
     constructor(base_url) {
         this.base_url = base_url
@@ -33,6 +38,8 @@ class XxRequest {
                                 url: '/pages/user/user-login/index',
                             })
                         }
+                    } else if (res.data.code === 500) {
+                        showMessage(res.data.msg)
                     } else {
                         resolve(res.data)
                     }

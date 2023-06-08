@@ -77,6 +77,11 @@ Page({
                     registerUserDTO: {},
                     isShowGetPhoneNumberModal: false
                 })
+                const pages = getCurrentPages()
+                const prevPage = pages[pages.length - 2]
+                prevPage.setData({
+                    isRefresh: true
+                })
                 wx.navigateBack({
                     delta: 1,
                 })

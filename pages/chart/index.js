@@ -58,7 +58,7 @@ Page({
     getPageData() {
         const menuDateIndex = this.data.menuDateIndex
 
-        if (menuDateIndex === 0 && this.data.weeks == null) {
+        if (menuDateIndex === 0) {
             this.handleWeeks()
         } else if (menuDateIndex === 1 && this.data.months == null) {
             this.handleMonths()

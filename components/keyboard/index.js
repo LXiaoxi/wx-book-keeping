@@ -91,7 +91,6 @@ Component({
             })
         },
         handleSymbol(e) {
-            console.log("23");
             const isAdd = e.currentTarget.dataset.isAdd
             const isMultiply = e.currentTarget.dataset.isMultiply
             let symbol = ''
@@ -102,7 +101,7 @@ Component({
                 symbol = isMultiply ? '*' : '/'
             }
             if (this.data.item.amount === '0') {
-                this.data.item.amount = ''
+                this.data.item.amount = '0'
             }
             this.setData({
                 'item.amount': this.data.item.amount.concat(symbol)
@@ -138,7 +137,7 @@ Component({
                 const item = this.data.item
                 // 获取当前时间
                 let date = this.data.item.date
-                if (this.data.item.date === null) {
+                if (!this.data.item.date) {
                     const time = new Date()
                     const year = time.getFullYear()
                     const month = (time.getMonth() + 1).toString().padStart(2, "0")

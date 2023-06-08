@@ -22,7 +22,8 @@ Page({
         expendTotal: 0.00,
         incomeTotal: 0.00,
         haxPageNext: false,
-        isHide: false
+        isHide: false,
+        isRefresh: false
     },
 
     /**
@@ -43,12 +44,13 @@ Page({
 
     },
     onShow() {
-        if (App.globalData.isBookDetailPageRefresh) {
+        if (App.globalData.isBookDetailPageRefresh || this.data.isRefresh) {
             this.setData({
                 dateArr: [],
                 'getAmountDetailCondition.page': 0
             })
             this.getPageData()
+            if (!App.globalData.isBookDetailPageRefresh) return
             App.globalData.isBookDetailPageRefresh = false
         }
 
