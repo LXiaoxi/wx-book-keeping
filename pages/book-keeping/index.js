@@ -95,7 +95,7 @@ Page({
         }
         this.setData({
             menuIndex,
-            currentIndex: null
+            currentIndex: -1
         })
 
     },

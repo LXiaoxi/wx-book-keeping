@@ -45,7 +45,6 @@ class XxRequest {
                     }
                 },
                 fail: (err) => {
-                    console.log(err);
                     reject(err)
                 }
             })
